@@ -6,9 +6,11 @@ btn.addEventListener('click', () => {
     if (cypherInput.value == "") {
         output.innerText = "Please Enter a Cypher."
     } else {
-        output.innerText = cypherInput.split("").map.call(cypherInput, function(char) {
+        let cypherInputValSplit = cypherInput.value.split("")
+        output.innerText = cypherInputValSplit.map.call(cypherInputValSplit, function(char) {
           let x = char.charCodeAt(0);
-            return x < 65 || x > 90 ? String.fromCharCode(x) : x < 78 ? String.fromCharCode(x + 13) : String.fromCharCode(x - 13); 
-            }).join("")
+          return x < 65 || x > 90 ? String.fromCharCode(x) : x < 78 ? String.fromCharCode(x + 13) : String.fromCharCode(x - 13); 
+            }).join("");
         }
-})
+      }
+)
